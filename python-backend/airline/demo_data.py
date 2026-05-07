@@ -80,18 +80,7 @@ MOCK_ITINERARIES = {
 }
 
 # Default scenario to load when no scenario key is specified.
-# Change this to "disrupted" to test the disruption flow by default.
-DEFAULT_SCENARIO = "on_time"
-
-
-def apply_itinerary_defaults(ctx: AirlineAgentContext, scenario_key: str | None = None) -> None:
-    """Populate the context with a demo itinerary if missing.
-
-    If no scenario_key is provided, falls back to DEFAULT_SCENARIO.
-    """
-    if scenario_key is None:
-        scenario_key = DEFAULT_SCENARIO
-
-    itinerary = MOCK_ITINERARIES.get(scenario_key)
-    if itinerary and not ctx.itinerary:
-        ctx.itinerary = deepcopy(itinerary)
+# Set to "disrupted" to immediately test the rebooking/voucher flow,
+# or "on_time" for the happy-path flow. I prefer starting with the
+# disrupted scenario while actively working on the rebooking agent.
+DEFAULT_SCENARIO = "disrupted"
