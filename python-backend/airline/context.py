@@ -20,6 +20,8 @@ class AirlineAgentContext(BaseModel):
     special_service_note: str | None = None
     origin: str | None = None
     destination: str | None = None
+    # Loyalty tier for the passenger (e.g. "silver", "gold", "platinum")
+    loyalty_tier: str | None = None
 
 
 class AirlineAgentChatContext(AgentContext[dict]):
