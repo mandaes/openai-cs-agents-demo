@@ -86,7 +86,9 @@ This app is designed for demonstration purposes. Feel free to update the agent p
 
 ## Agents included
 
-- Triage Agent: entry point that routes to specialists.
-- Flight Information Agent: shares live status, connection risk, and alternate options.
-- Booking & Cancellation Agent: books, rebooks, or cancels trips.
-- Seat & Special S
+- **Triage Agent**: entry point that routes to specialized agents based on the user's request
+- **FAQ Agent**: handles common questions using a knowledge base lookup tool
+- **Order Agent**: manages order status, returns, and cancellations
+- **Billing Agent**: handles billing inquiries, refunds, and payment issues
+
+> **Note (personal):** The handoff logic between Triage → Order and Triage → Billing is the most interesting part to study. See `notes/handoff-observations.md` for my breakdown.
